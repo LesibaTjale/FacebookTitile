@@ -20,7 +20,9 @@ public class FacebookStepDifinition {
     public void i_launch_chrome_browser(){
         System.setProperty("webdriver.chrome.driver","C://Users//Mama Shongi//Documents//SeleniumDrivers//chromedriver_win32//chromedriver.exe");
        // driver = new ChromeDriver();
-        driver = new RemoteWebDriver("http://localhost:4444", new DesiredCapabilities().setBrowserName("chrome"));
+        DesiredCapabilities dc = new DesiredCapabilities();
+        dc.setBrowserName("chrome");
+        driver = new RemoteWebDriver(new URL("http://localhost:4444"),dc);
     }
 
     @When("I open Facebook homepage")
